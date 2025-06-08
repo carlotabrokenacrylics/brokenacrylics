@@ -1,0 +1,739 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap');
+* {
+  margin: 0px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*========================
+  GENERAL STYLES
+========================*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #10050F;
+  color: #FFEFF9;
+}
+
+/*========================
+  HEADER & NAVIGATION
+========================*/
+header {
+  background-color: #10050F;
+    padding: 0 0 10px 0; /* solo padding abajo  position: relative;*/
+  z-index: 100;
+  text-align: center;
+}
+
+header nav a {
+  color: #FFEFF9;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 5px;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header nav a:hover {
+  color: #10050F;
+  background-color: transparent;
+  transform: scale(1.1);
+}
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+/*========================
+CONTACT
+========================*/
+
+header nav a:focus, 
+.contact-form button:focus {
+  outline: 3px solid #FCC6F7;
+}
+.contact-section {
+  background-image: url('imagenes/contactimg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+.contact-intro-box {
+  background-color: #10050F;
+  color: #FFEFF9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 2rem auto;
+  text-align: left;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/*========================
+LOGO
+========================*/
+.sticky-logo {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+    margin: -50px auto 5px;
+  }
+
+.logo {
+  height: 120px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border: none;
+}
+/*========================
+  SECTION TITLES
+========================*/
+h2, h3, h4 {
+  color: #F476E5;
+  ;
+}
+
+/*========================
+  MAIN
+========================*/
+main {
+  padding: 20px;
+}
+
+/*========================
+  INICIO SECTION
+========================*/
+.index-section {
+  text-align: center;
+  margin-top: 0px;
+}
+
+.index-text {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+/*========================
+  ABOUT SECTION
+========================*/
+.container-class {
+  text-align: left;
+  max-width: 600px; /* Optional: limit width so it doesn't stretch full screen */
+  margin: 0 auto;   /* Centers the container horizontally */
+  padding: 20px;    /* optional for breathing room */
+}
+#about {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.about-img {
+  width: 300px;         
+  height: auto;    
+  max-width: 100px;   
+  border-radius: 10px;
+  margin: 20px auto;
+  display: block;
+}
+
+
+.ammar-imgs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.ammar-img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+/*========================
+  GALLERY SECTION
+========================*/
+.gallery-section {
+  margin-top: 50px;
+  text-align: center;
+}
+.gallery-section h3 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  }
+
+.gallery-title {
+  font-size: 2rem;
+  color: #F476E5;
+  margin-bottom: 20px;
+}
+
+.gallery-frame {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.gallery-img {
+  width: 100%;
+  max-width: 400px; /* Adjust to your preferred max size */
+  height: auto;
+  border-radius: 12px !important;
+  object-fit: contain; /* Ensures the image fits inside the container completely */
+  max-height: 300px; /* Ensures the image doesn't exceed a height limit */
+}
+
+.gallery-img {
+  height: 250px;
+  width: auto;
+  border-radius: 10px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-description {
+  max-width: 700px;
+  margin: 0 auto 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #FFEFF9;
+}
+
+.gallery-video {
+  width: 100%;
+  height: auto;
+  object-fit: contain;  /* Show the whole thing */
+  border-radius: 12px;
+  display: block;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile default */
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 600px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+@media (min-width: 600px) {
+  .gallery-img {
+    width: 100%;
+    min-width: 100%; /* Ensure the image takes up the full width on mobile */
+    object-fit: contain; /* Maintain aspect ratio without cropping */
+    height: auto; /* Preserve aspect ratio */
+  }
+}
+
+
+@media (min-width: 768px) {
+  .shop-container {
+    flex-direction: row; /* side by side on tablet+ */
+    justify-content: flex-start; /* align left */
+    align-items: center; /* vertical center if different heights */
+  }
+  
+  .shop-item {
+    flex: 0 0 auto; /* don't shrink */
+  }
+  
+  .shop-img {
+    max-width: 150px; /* control icon size */
+    height: auto;
+  }
+
+#commissions {
+  grid-template-columns: 1fr 2fr; /* desktop: text next to form */
+  align-items: start;
+}
+}
+
+@media (min-width: 600px) {
+  body {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .index-header {
+    font-size: 2rem;
+  }
+
+  .index-text {
+    font-size: 1rem;
+  }
+
+  .shop-label {
+    font-size: 1rem; /* Adjust shop label font for readability */
+  }
+}
+footer {
+  padding: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 600px) {
+  footer {
+    font-size: 0.75rem; /* Smaller text on mobile */
+    padding: 15px 10px; /* Less padding on small screens */
+  }
+}
+
+/*========================
+  SHOP SECTION
+========================*/
+#shop {
+  text-align: center;
+  margin-top: 50px;
+}
+.ejemplos {
+  margin-top: 3rem; /* O más si querés más aire */
+}
+
+.shop-container {
+  display: flex;
+  flex-direction: column; /* stack on mobile */
+  gap: 1rem;
+}
+.img-wrapper {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.shop-item {
+  text-align: center;
+}
+
+.shop-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+.example-product-img,
+.shop-img {
+  width: 100%;       
+  height: auto;      
+  object-fit: contain;
+  display: block;     /* Removes tiny gaps under images */
+}
+.ejemplos {
+  text-align: left;
+  margin-left: 0; /* optional to remove any default margin */
+}
+
+.shop-container {
+  display: flex;
+  justify-content: flex-start; /* if it's flexbox */
+  text-align: left;
+  margin-left: 0; /* if you had margin/padding pushing it right */
+}
+
+.shop-label {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #FFEFF9;
+}
+.carousel-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+  margin-bottom: 40px;
+  scrollbar-width: thin; /* Firefox */
+}
+
+.carousel-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+  background: #F476E5;
+  border-radius: 4px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 16px;
+}
+
+.example-product-img {
+  height: 200px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  flex: 0 0 auto;
+  transition: transform 0.3s ease;
+}
+
+
+.example-product-img:hover {
+  transform: scale(1.05);
+}
+.carousel-track {
+  display: flex;
+  gap: 10px; /* or whatever spacing you want */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
+.carousel-track a {
+  flex: 0 0 auto; /* don’t shrink or grow, keep natural size */
+  scroll-snap-align: start;
+  display: block;
+  max-width: 200px; /* or whatever max width you want per image */
+}
+
+.carousel-track img {
+  width: 100%;
+  height: auto; /* keeps aspect ratio */
+  display: block;
+  object-fit: contain; /* so images don't stretch */
+  border-radius: 8px; /* optional, just looks nicer */
+}
+.carousel-track {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #ff69b4 #222; /* thumb color and track color */
+}
+
+/* Chrome, Edge, Safari */
+.carousel-track::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carousel-track::-webkit-scrollbar-track {
+  background: #222; /* track color (dark background) */
+}
+
+.carousel-track::-webkit-scrollbar-thumb {
+  background-color: #ff69b4; /* hot pink thumb */
+  border-radius: 10px;
+  border: 2px solid #222; /* adds a little padding around thumb */
+}
+
+/*========================
+  COMMISSIONS SECTION
+========================*/
+#commissions h2,
+#commissions h3 {
+  margin-top: 30px; 
+  text-align: center;
+}
+
+#commissions {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: 1fr; /* mobile default: stacked */
+  gap: 1rem;
+  padding: 1rem;
+  }
+
+.terms-box {
+  background-color: #333;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+.commission-subtitle {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #F476E5; 
+  font-weight: bold;
+}
+
+.commission-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: #894481;
+  box-shadow: 0 0 0px rgba(255, 200, 221, 0.2);
+}
+
+.commission-form label {
+  color: #FCC6F7;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.commission-form input,
+.commission-form textarea {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #140713;
+  color: #FFEFF9;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.commission-form input:focus,
+.commission-form textarea:focus {
+  outline: 2px solid #F476E5;
+}
+
+.commission-form button {
+  background-color: #F476E5;
+  color: #FFEFF9;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.commission-form button:hover {
+  background-color: #f09cd1;
+}
+.commission-container {
+  display: flex;
+  flex-direction: column; /* mobile first */
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .commission-container {
+    flex-direction: row; /* side by side on desktop */
+    align-items: flex-start;
+  }
+
+  .commission-text,
+  .commission-form {
+    flex: 1;
+  }
+
+  .commission-text {
+    max-width: 500px; /* optional, for cleaner layout */
+  }
+}
+
+
+/*========================
+  CONTACT / SUGGESTIONS
+========================*/
+.contact-section {
+  margin-top: 50px;
+  padding: 20px;
+  text-align: center;
+}
+
+#form-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#form-description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #FFEFF9;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #10050F;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contact-form label {
+  text-align: left;
+  font-weight: 600;
+  color: #FFEFF9;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #140713;
+  color: #FFEFF9;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 15px;
+}
+
+.contact-form select {
+  cursor: pointer;
+}
+
+.contact-form button {
+  padding: 12px;
+  font-size: 1.2rem;
+  background-color: hotpink;
+  color: #FFEFF9;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #f09cd1;
+}
+
+/*========================
+  INSTAGRAM ICON
+========================*/
+.floating-instagram {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.insta-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/*========================
+  FOOTER
+========================*/
+footer {
+  padding: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 600px) {
+  .shop-img, .gallery-img {
+    width: 100%; /* Full width for images */
+    min-width: 100%;
+  }
+
+  @media (min-width: 600px) {
+    .about-img {
+      min-width: 100px;
+      max-width: 300px;
+    }
+  }
+  
+  .gallery-img {
+    min-width: 80px; /* Adjust gallery images to scale better */
+    height: auto; /* Preserve aspect ratio */
+  }
+
+  .shop-item {
+    width: 100%;
+    min-width: 300px;
+    margin: 0 auto;
+  }
+
+  footer {
+    font-size: 0.75rem; /* Smaller text size */
+    padding: 15px 10px; /* Less padding for small screens */
+  }
+}
+
+/*========================
+  MOBILE SPACING
+========================*/
+@media (min-width: 600px) {
+  body {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Ocultar el checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Ícono de hamburguesa para mobile */
+.menu-icon {
+  display: block;
+  cursor: pointer;
+  font-size: 28px;
+  color: #F476E5;
+  padding: 10px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  z-index: 2000;
+}
+
+/* Por defecto, ocultar nav en mobile */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background-color: #F476E5;
+  margin-top: 60px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Mostrar menú cuando se hace clic en el icono */
+#menu-toggle:checked ~ .nav-menu .nav-links {
+  display: flex;
+}

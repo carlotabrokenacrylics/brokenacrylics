@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>brokenacrylics</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <input type="checkbox" id="menu-toggle" hidden>
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    
+    <nav class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="inicio.html">INICIO</a></li>
+        <li><a href="gallery.html">GALERÍA</a></li>
+        <li><a href="about.html">SOBRE LA ARTISTA</a></li>
+        <li><a href="shop.html">COMPRAR</a></li>
+        <li><a href="commissions.html">COMISIONES</a></li>
+        <li><a href="contact.html">SUGERENCIAS/CONTACTO</a></li>
+      </ul>
+    </nav>    
+    <div class="sticky-logo">
+    <a href="index.html">
+      <img src="imagenes/brokenacrylics-logo.png" alt="Broken Acrylics logo" class="logo" />
+    </a>
+  </div>
+
+
+</header>
+
+  <main>
+    <section id="commissions">
+        <h2>COMISIONES</h2>
+        <h3 class="commission-subtitle">Encargá una Comisión</h3>
+        <div class="commission-container">
+          <div class="commission-text">
+        <p>Puedo convertir cualquier imagen que elijas en una obra de arte en paleta pastel, con o sin texto.</p>
+        <p>Dejame una selección de al menos tres imágenes (ordenadas de tu favorita a la que menos te guste). Esto me ayuda a tener más opciones por si una no es posible.</p>
+      </div>
+<form action="https://formspree.io/f/yourFormID" method="POST" class="commission-form">
+  <label for="nombre">Nombre</label>
+  <input type="text" id="nombre" name="nombre" required>
+
+  <label for="email">E-mail</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="referencias">Referencias (enlaces)</label>
+  <textarea id="referencias" name="referencias" rows="5" required></textarea>
+
+  <label for="preferencias">¿Querés texto incluido? ¿Colores específicos?</label>
+  <textarea id="preferencias" name="preferencias" rows="4"></textarea>
+
+  <button type="submit">Enviar Pedido</button>
+</form>
+</div>
+        <section class="commission-form">
+            <h3>Términos y Condiciones para Comisiones</h3>
+            <ul>
+                <li><strong>Tiempo de entrega:</strong> El tiempo de entrega estimado es de 2 a 3 semanas dependiendo de la complejidad de la comisión.</li>
+                <li><strong>Precio:</strong> El precio de cada comisión varía según el tamaño y la complejidad de la obra. Se proporcionará un presupuesto antes de comenzar el trabajo.</li>
+                <li><strong>Pago:</strong> El pago se realiza por adelantado. Se puede pagar a través de PayPal, transferencia bancaria o plataformas similares.</li>
+                <li><strong>Revisiones:</strong> Se incluye una revisión gratuita dentro de los primeros 5 días después de entregar el trabajo. Después de ese período, se cobrará una tarifa adicional por cada revisión.</li>
+                <li><strong>Derechos de autor:</strong> Las comisiones son de uso personal. No está permitido reproducirlas para fines comerciales sin un acuerdo previo.</li>
+                <li><strong>Anulación:</strong> Si decides cancelar la comisión después de que haya comenzado, se te reembolsará un porcentaje del pago según el progreso del trabajo.</li>
+                <li><strong>Reembolsos:</strong> No se realizan reembolsos una vez que el trabajo ha sido entregado.</li>
+            </ul>
+        </div>            
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 brokenacrylics</p>
+    <p>* Este blog fue desarrollado con fines académicos en el marco de la carrera de Comunicación Digital (Universidad de Palermo).</p>
+  </footer>
+  <a href="https://instagram.com/brokenacrylics" target="_blank" class="floating-instagram">
+    <img src="imagenes/instagram.webp" alt="Instagram" class="insta-icon">
+  </a>
+  </body>
+</html>
