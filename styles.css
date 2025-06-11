@@ -274,10 +274,27 @@ main {
   display: flex;
   flex-direction: column; /* stack on mobile */
   align-items: center;
-  gap: 30px;
-  justify-content: flex-start; /* if it's flexbox */
+  gap: 2rem;
+  justify-content: center;
   text-align: left;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
   margin-left: 0; 
+}
+
+.shop-item {
+  flex: 0 1 auto;
+  text-align: center;
+}
+
+.shop-img {
+  width: 120px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.shop-img:hover {
+  transform: scale(1.1);
 }
 
 .img-wrapper {
