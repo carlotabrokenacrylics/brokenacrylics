@@ -179,10 +179,11 @@ main {
   text-align: center;
 }
 .gallery-section h3 {
-  margin-top: 3rem;
-  margin-bottom: 1rem;
   text-align: center;
-  }
+  margin-left: 1rem;
+  margin-top: 3rem;
+  color: #F476E5;
+}
 
 .gallery-title {
   font-size: 2rem;
@@ -227,6 +228,21 @@ main {
   color: #FFEFF9;
 }
 
+.proceso-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px; /* O el alto que necesites */
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.proceso-title {
+  color: #F476E5;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
 .gallery-video {
   width: 100%;
   height: auto;
@@ -242,83 +258,6 @@ main {
   margin-top: 2rem;
 }
 
-@media (min-width: 600px) {
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 900px) {
-  .video-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-
-@media (min-width: 600px) {
-  .gallery-img {
-    width: 100%;
-    min-width: 100%; /* Ensure the image takes up the full width on mobile */
-    object-fit: contain; /* Maintain aspect ratio without cropping */
-    height: auto; /* Preserve aspect ratio */
-  }
-}
-
-
-@media (min-width: 768px) {
-  .shop-container {
-    flex-direction: row; /* side by side on tablet+ */
-    justify-content: flex-start; /* align left */
-    align-items: center; /* vertical center if different heights */
-  }
-  
-  .shop-item {
-    flex: 0 0 auto; /* don't shrink */
-  }
-  
-  .shop-img {
-    max-width: 150px; /* control icon size */
-    height: auto;
-  }
-
-#commissions {
-  grid-template-columns: 1fr 2fr; /* desktop: text next to form */
-  align-items: start;
-}
-}
-
-@media (min-width: 600px) {
-  body {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .index-header {
-    font-size: 2rem;
-  }
-
-  .index-text {
-    font-size: 1rem;
-  }
-
-  .shop-label {
-    font-size: 1rem; /* Adjust shop label font for readability */
-  }
-}
-footer {
-  padding: 20px;
-  font-size: 0.9rem;
-  text-align: center;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-@media (min-width: 600px) {
-  footer {
-    font-size: 0.75rem; /* Smaller text on mobile */
-    padding: 15px 10px; /* Less padding on small screens */
-  }
-}
 
 /*========================
   SHOP SECTION
@@ -334,21 +273,19 @@ footer {
 .shop-container {
   display: flex;
   flex-direction: column; /* stack on mobile */
-  gap: 1rem;
+  align-items: center;
+  gap: 30px;
+  justify-content: flex-start; /* if it's flexbox */
+  text-align: left;
+  margin-left: 0; 
 }
+
 .img-wrapper {
   width: 200px;
   height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.shop-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
 }
 
 .shop-item {
@@ -370,13 +307,6 @@ footer {
 .ejemplos {
   text-align: left;
   margin-left: 0; /* optional to remove any default margin */
-}
-
-.shop-container {
-  display: flex;
-  justify-content: flex-start; /* if it's flexbox */
-  text-align: left;
-  margin-left: 0; /* if you had margin/padding pushing it right */
 }
 
 .shop-label {
@@ -538,6 +468,16 @@ footer {
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
+#commissions {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 2rem;
+  background-image: url("imagenes/fondocomisiones.png"); /* Cambiá por la ruta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #FFEFF9; /* Asegurate de que el texto siga siendo legible */
+}
 
 .commission-form button:hover {
   background-color: #f09cd1;
@@ -546,23 +486,10 @@ footer {
   display: flex;
   flex-direction: column; /* mobile first */
   gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .commission-container {
-    flex-direction: row; /* side by side on desktop */
-    align-items: flex-start;
+  background-color: rgba(16, 5, 15, 0.8); /* tu color de fondo con transparencia */
+  padding: 2rem;
+  border-radius: 1rem;
   }
-
-  .commission-text,
-  .commission-form {
-    flex: 1;
-  }
-
-  .commission-text {
-    max-width: 500px; /* optional, for cleaner layout */
-  }
-}
 
 
 /*========================
@@ -665,50 +592,104 @@ footer {
   overflow-wrap: break-word;
 }
 
-@media (min-width: 600px) {
-  .shop-img, .gallery-img {
-    width: 100%; /* Full width for images */
-    min-width: 100%;
+/*========================
+MEDIA
+========================*/
+@media (min-width: 768px) {
+  .commission-container {
+    flex-direction: row; /* side by side on desktop */
+    align-items: flex-start;
   }
 
-  @media (min-width: 600px) {
-    .about-img {
-      min-width: 100px;
-      max-width: 300px;
-    }
-  }
-  
-  .gallery-img {
-    min-width: 80px; /* Adjust gallery images to scale better */
-    height: auto; /* Preserve aspect ratio */
+  .commission-text,
+  .commission-form {
+    flex: 1;
   }
 
-  .shop-item {
-    width: 100%;
-    min-width: 300px;
-    margin: 0 auto;
+  .commission-text {
+    max-width: 500px; /* optional, for cleaner layout */
   }
+}
+.shop-container {
+  flex-direction: row; /* side by side on tablet+ */
+  justify-content: flex-start; /* align left */
+  align-items: center; /* vertical center if different heights */
+}
 
-  footer {
-    font-size: 0.75rem; /* Smaller text size */
-    padding: 15px 10px; /* Less padding for small screens */
+.shop-item {
+  flex: 0 0 auto; /* don't shrink */
+}
+
+.shop-img {
+  max-width: 150px; /* control icon size */
+  height: auto;
+}
+
+#commissions {
+grid-template-columns: 1fr 2fr; /* desktop: text next to form */
+align-items: start;
+}
+
+@media (min-width: 900px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/*========================
-  MOBILE SPACING
-========================*/
 @media (min-width: 600px) {
   body {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 }
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  body {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .index-header {
+    font-size: 2rem;
+  }
+
+  .index-text {
+    font-size: 1rem;
+  }
+
+  .shop-label {
+    font-size: 1rem; /* Adjust shop label font for readability */
+  }
+
+footer {
+  padding: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+
+  footer {
+    font-size: 0.75rem; /* Smaller text on mobile */
+    padding: 15px 10px; /* Less padding on small screens */
+  }
+
 
 /* Ocultar el checkbox */
 #menu-toggle {
   display: none;
 }
+
+  .gallery-img {
+    width: 100%;
+    min-width: 100%; /* Ensure the image takes up the full width on mobile */
+    object-fit: contain; /* Maintain aspect ratio without cropping */
+    height: auto; /* Preserve aspect ratio */
+  }
+
 
 /* Ícono de hamburguesa para mobile */
 .menu-icon {
@@ -737,3 +718,29 @@ footer {
 #menu-toggle:checked ~ .nav-menu .nav-links {
   display: flex;
 }
+
+  .shop-img, .gallery-img {
+    width: 100%; /* Full width for images */
+    min-width: 100%;
+  }
+
+    .about-img {
+      min-width: 100px;
+      max-width: 300px;
+    }
+
+  .gallery-img {
+    min-width: 80px; /* Adjust gallery images to scale better */
+    height: auto; /* Preserve aspect ratio */
+  }
+
+  .shop-item {
+    width: 100%;
+    min-width: 300px;
+    margin: 0 auto;
+  }
+
+  footer {
+    font-size: 0.75rem; /* Smaller text size */
+    padding: 15px 10px; /* Less padding for small screens */
+  }
