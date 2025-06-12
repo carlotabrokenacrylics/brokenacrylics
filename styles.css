@@ -230,11 +230,10 @@ main {
 
 .proceso-section {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 50px; /* O el alto que necesites */
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+  height: 50px;            /* full viewport height */
   text-align: center;
-  padding: 2rem 1rem;
 }
 
 .proceso-title {
@@ -273,13 +272,25 @@ main {
 .shop-container {
   display: flex;
   flex-direction: column; /* stack on mobile */
-  align-items: center;
-  gap: 2rem;
+  gap: 1rem;
+}
+.img-wrapper {
+  width: 200px;
+  height: 200px;
+  display: flex;
   justify-content: center;
-  text-align: left;
+  align-items: center;
+}
+
+.shop-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   margin-top: 1.5rem;
-  margin-left: 0; 
 }
 
 .shop-item {
@@ -297,13 +308,6 @@ main {
   transform: scale(1.1);
 }
 
-.img-wrapper {
-  width: 200px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .shop-item {
   text-align: center;
@@ -324,6 +328,13 @@ main {
 .ejemplos {
   text-align: left;
   margin-left: 0; /* optional to remove any default margin */
+}
+
+.shop-container {
+  display: flex;
+  justify-content: flex-start; /* if it's flexbox */
+  text-align: left;
+  margin-left: 0; /* if you had margin/padding pushing it right */
 }
 
 .shop-label {
@@ -415,6 +426,48 @@ main {
 #commissions h3 {
   margin-top: 30px; 
   text-align: center;
+}
+.commission-subtitle {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem; /* space under "Encargá una Comisión" */
+  font-weight: 600;
+}
+
+
+.commission-text,
+.commission-form {
+  flex: 1;
+  width: 100%;
+}
+
+.commission-text {
+  max-width: 100%;
+}
+
+#commissions {
+  display: grid;
+  grid-template-columns: 1fr; /* stacked vertically */
+  gap: 1rem;
+  padding: 1rem;
+  background-image: url("imagenes/fondocomisiones.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #FFEFF9;
+}
+
+
+.commission-container form {
+  width: 100%;
+}
+
+.commission-container .commission-form:last-child { /* your terms section */
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ff69b4; /* or your pink accent */
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #eee;
 }
 
 #commissions {
@@ -614,8 +667,13 @@ MEDIA
 ========================*/
 @media (min-width: 768px) {
   .commission-container {
-    flex-direction: row; /* side by side on desktop */
-    align-items: flex-start;
+    display: flex;
+    flex-direction: row; /* stacked vertically on mobile */
+    align-items: stretch;
+    gap: 1.5rem;
+    background-color: rgba(16, 5, 15, 0.8);
+    padding: 2rem;
+    border-radius: 1rem;
   }
 
   .commission-text,
@@ -626,7 +684,25 @@ MEDIA
   .commission-text {
     max-width: 500px; /* optional, for cleaner layout */
   }
+
+
+  .commission-text,
+  .commission-form {
+    flex: 1;
+  }
+
+  .commission-text {
+    max-width: 500px; /* optional, for cleaner layout */
+  }
 }
+@media (min-width: 768px) {
+  #commissions {
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+  }
+}
+
+
 .shop-container {
   flex-direction: row; /* side by side on tablet+ */
   justify-content: flex-start; /* align left */
@@ -642,10 +718,7 @@ MEDIA
   height: auto;
 }
 
-#commissions {
-grid-template-columns: 1fr 2fr; /* desktop: text next to form */
-align-items: start;
-}
+
 
 @media (min-width: 900px) {
   .video-grid {
